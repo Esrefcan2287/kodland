@@ -1,0 +1,45 @@
+import discord,os,random
+from discord.ext import commands
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='Command=', intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'{bot.user} olarak giriş yaptık')
+
+@bot.command()
+async def Help_Me(ctx):
+    await ctx.send(f'"Command=" GOTY Souls_like Simulator Action RPG Horror Trash')
+
+@bot.command()
+async def Souls_like(ctx):
+    await ctx.send(f'Demon s Souls Dark Souls Dark Souls II Dark Souls III Bloodborne Sekiro: Shadows Die Twice elden ring')
+
+@bot.command()
+async def Simulator(ctx):
+    await ctx.send(f'Flight Simulator Euro Truck Simulator 2 Microsoft Train Simulator Farming Simulator 19 Cities: Skylines The Sims 4 American Truck Simulator Kerbal Space Program Train Simulator 2022 Bus Simulator 18')
+
+@bot.command()
+async def Action(ctx):
+    await ctx.send(f'Grand Theft Auto V Red Dead Redemption 2 Call of Duty: Modern Warfare Halo Infinite Fortnite Apex Legends Overwatch DOOM Eternal Battlefield 2042 Cyberpunk 2077')
+
+@bot.command()
+async def RPG(ctx):
+    await ctx.send(f'The Witcher 3: Wild Hunt Final Fantasy VII Remake Skyrim Mass Effect 2 Dragon Age: Origins Divinity: Original Sin 2 Persona 5 Dark Souls III Fallout: New Vegas The Elder Scrolls Online')
+
+@bot.command()
+async def Horror(ctx):
+    await ctx.send(f'Silent Hill 2 Resident Evil 7: Biohazard Outlast Amnesia: The Dark Descent Dead Space Alien: Isolation Until Dawn Layers of Fear SOMA Condemned: Criminal Origins System Shock 2')
+    
+@bot.command()
+async def GOTY(ctx):
+    await ctx.send(f'2015:The Witcher 3: Wild Hunt 2016:Overwatch 2017:The Legend of Zelda: Breath of the Wild 2018:God of War 2019:Sekiro: Shadows Die Twice 2020:The Last of Us Part II 2021:Resident Evil Village 2022:Elden Ring')
+
+@bot.command()
+async def Trash(ctx):
+    await ctx.send(f'Call of Duty Assassin s Creed FarCry Aliens: Colonial Marines Rambo: The Video Game E.T. the Extra-Terrestrial Big Rigs: Over the Road Racing Sonic the Hedgehog Ride to Hell: Retribution  Leisure Suit Larry')
+
+bot.run("Bot Token")
